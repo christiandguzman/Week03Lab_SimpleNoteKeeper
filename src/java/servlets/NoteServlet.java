@@ -33,12 +33,16 @@ public class NoteServlet extends HttpServlet {
         br = new BufferedReader(aa);
        
         String title=br.readLine();
+        
         String contents="";
-        while(br.readLine()!=null){
-            contents = br.readLine() + "\n";
+         
+        String line = null;
+        while ((line = br.readLine()) != null) {
+            contents += line +"\n";
         }
         //read file into a note object (bean)
         Note n = new Note (title,contents);
+        
         
         
         br.close();
@@ -60,18 +64,28 @@ public class NoteServlet extends HttpServlet {
         
         
         String path = getServletContext().getRealPath("/WEB-INF/note.txt");
+        
         String title = request.getParameter("title");
-         String contents =request.getParameter("contents");
+        String contents = request.getParameter("contents");
+        
         Note n = new Note (title,contents);
+
+        String display = "";
+         
+        String[] lines = contents.split("\n");
+           for (String line : lines) {
+           display += line +"<br>";
+        }
+        
         
         
       
-    //writer
+        //writer
         
         PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter(path,false)));
 
         pw.println(n.getTitle());
-        pw.print(n.getContents());
+        pw.print(display);
         
         pw.close();
         
