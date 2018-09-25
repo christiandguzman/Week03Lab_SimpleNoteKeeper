@@ -12,17 +12,18 @@
         <title>Edit Note</title>
     </head>
     <body>
-         <h1>Simple Note Keeper</h1>
-        <br>
-        <h2>View Note</h2>
-        <br>
-        <form method="post" action="save">
-        <h3>Title: </h3> 
-        <input type="text" name="editTitle">
-        <br>
-        <h3>Contents:</h3>
-        <input type="text"  name="editContents" >
-        
+        <form method="post" action="note">
+            <h1>Simple Note Keeper</h1>
+                <br>
+            <h2>View Note</h2>
+                <br>
+            <h3>Title: </h3> 
+            <input type="text" value="${note.title}">
+                <br>
+            <h3>Contents:</h3>
+            <textarea type="text"  name="content" >${note.contents}
+            </textarea>
+
         
         <input type="submit" >
 
