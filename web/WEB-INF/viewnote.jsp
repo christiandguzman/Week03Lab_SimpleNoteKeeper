@@ -12,18 +12,20 @@
         <title>View Note</title>
     </head>
     <body>
-        <h1>Simple Note Keeper</h1>
+        <form method="get" action="view">
+            <h1>Simple Note Keeper</h1>
+            <br>
+            <h2>View Note</h2>
+            <br>
+            <h3>Title: </h3> 
+            ${note.title}
+            <br>
+            <h3>Contents:</h3>
+            ${note.contents}
+            <br>
+            </form>
         <br>
-        <h2>View Note</h2>
-        <br>
-        <h3>Title: </h3> 
-        <div name="title"></div>
-        <br>
-        <h3>Contents:</h3>
-        <div name="contents"></div>
-        <br>
-        <br>
-        <a href="">
-            
+        <a href="note?edit">Edit</a>
+    
     </body>
 </html>

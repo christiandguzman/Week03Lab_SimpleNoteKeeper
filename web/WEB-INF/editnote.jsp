@@ -18,14 +18,14 @@
             <h2>View Note</h2>
                 <br>
             <h3>Title: </h3> 
-            <input type="text" value="${note.title}">
+            <input type="text" name="title" value="${note.title}">
                 <br>
             <h3>Contents:</h3>
-            <textarea type="text"  name="content" >${note.contents}
+            <textarea type="text"  name="contents" >${note.contents}
             </textarea>
 
-        
-        <input type="submit" >
+                <br>
+        <input type="submit" value="submit">
 
         </form>
         <br>
